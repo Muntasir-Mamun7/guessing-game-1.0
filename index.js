@@ -1,32 +1,37 @@
-let guessBtn = document.getElementById('guessBtn')
-let feedback = document.getElementById('feedback')
-let playAgainBtn = document.getElementById('playAgainBtn')
 let guessInput = document.getElementById('guessInput')
-let number = Math.floor(Math.random() * 100) + 1
 
+let guessBtn = document.getElementById('guessBtn')
 
-guessBtn.addEventListener('click', function() {
-    let guess = parseInt(guessInput.value)
+let feedback = document.getElementById('feedback')
 
+let playAgainBtn = document.getElementById('playAgainBtn')
+
+let number = Math.floor(Math.random() * 100 + 1)
+
+guessBtn.addEventListener('click' ,function() {
+
+   let guess = parseInt(guessInput.value) 
     if (guess === number) {
-        feedback.innerHTML = 'You guessed right!'
+        feedback.innerHTML = 'You guessed Right!'
         playAgainBtn.style.display = 'block'
-    } else if (guess < number) {
-        feedback.innerHTML = 'You guessed too low!'
-    } else {
+    }
+
+    else if  ( guess < number) {
+        feedback.innerHTML = 'You guessed to low!'
+    }
+
+    else  {
         feedback.innerHTML = 'You guessed too high!'
     }
-});
+   
+
+}) 
 
 playAgainBtn.addEventListener('click', function() {
     playAgainBtn.style.display = 'none'
-    number = Math.floor(Math.random() * 100) + 1;
+    number = Math.floor(Math.random() * 100 + 1)
     feedback.innerHTML = ''
     guessInput.value = ''
-});
+}
 
-window.addEventListener('load', function() {
-    number = Math.floor(Math.random() * 100) + 1
-    feedback.innerHTML = ''
-    guessInput.value = ''
-})
+)
